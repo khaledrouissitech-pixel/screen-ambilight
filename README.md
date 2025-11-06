@@ -86,3 +86,9 @@ Output example:
  ```
 
 ---
+Each tuple (R, G, B) represents one LED’s color.
+
+✅ Perfect for testing before buying LEDs.
+
+
+
