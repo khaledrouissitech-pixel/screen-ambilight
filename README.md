@@ -132,9 +132,10 @@ region = screen.crop((x1, 0, x2, EDGE_THICKNESS)
 | width | Full screen width |
 | EDGE_THICKNESS| Number of pixels to capture from the top edge|
 | (x1, 0, x2, EDGE_THICKNESS)| Rectangular slice for that LED |
-LED 0 = first slice
- LED 1 = next slice
- Continues across entire edge
+
+ >>LED 0 = first slice
+ >>LED 1 = next slice
+ >>Continues across entire edge
 
 Same logic repeats for:
 
