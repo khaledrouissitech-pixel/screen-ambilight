@@ -1,51 +1,59 @@
-# 💡 Screen Ambilight (Python + Arduino)
-A simple Ambilight-style system for laptops and monitors.  
-The Python script captures the screen, divides it into edge regions, calculates the dominant colors, and sends them to an Arduino driving a WS2812B LED strip.
+# 💡 Screen Ambilight System (Python + Arduino)
 
-Even without hardware, the project can run in "simulation mode" and prints the LED colors directly in the terminal.
+This project creates an Ambilight-style effect for any monitor or laptop.  
+A Python script captures the screen, detects the dominant colors along the edges, and sends them to an Arduino controlling a WS2812B (NeoPixel) LED strip.
+
+Even without a physical LED strip, the project works in **simulation mode**, printing LED color values in the terminal so anyone can test the setup.
 
 ---
 
 ## ✅ Features
-- Live screen capture and color extraction
-- Configurable LED layout (top, bottom, left, right)
-- Works with any screen size
-- Arduino receiver code included
-- Can run without LEDs (debug mode)
+- Real-time screen color capture
+- Divides the screen into LED segments
+- Calculates average RGB color for each segment
+- Sends data to Arduino over Serial
+- Can run without LEDs (prints RGB output)
 
 ---
 
 ## 🖥 Hardware Requirements
-- Arduino (Uno, Nano, or similar)
-- WS2812B or NeoPixel LED strip  
-- USB cable to PC
-- Power supply for LEDs 
+| Component | Details |
+|----------|---------|
+| Arduino board | Uno / Nano / Mega (any with serial) |
+| LED Strip | WS2812B / NeoPixel |
+| Power | 5V power supply (depending on LED count) |
+| USB Cable | Connects PC ↔ Arduino |
 
-> For demonstration, this project was tested **without** a real LED strip.  
-> The Python script prints LED data to confirm it works even without hardware.
+> **Note:** This repository was developed and tested **without a real LED strip**.  
+> The software is fully functional and ready for hardware connection.
 
 ---
 
-## 📌 Screen Size Used in Example
-Laptop screen: **35 cm x 23.5 cm**
+## 🧪 Example Screen
+Laptop size used for calculations:  
+**35 cm × 23.5 cm**
 
-The LED strip would normally go around the edges like this:
-
+A typical LED layout:
 - Top: 20 LEDs  
 - Bottom: 20 LEDs  
 - Left: 10 LEDs  
 - Right: 10 LEDs  
-- Total LEDs in example: **60**
+➡ **Total: 60 LEDs**
 
-The exact number depends on the LED density (30 LEDs/meter, 60 LEDs/meter, etc.)
+The layout depends on strip LED density (30/meter, 60/meter, etc.)
 
 ---
 
-## 🧮 How LED Positions Are Calculated
-The screen is divided into segments matching the number of LEDs on each edge.
+## 📦 Python Dependencies
 
-Example for the top strip (`TOP_LEDS = 20`):
-```python
-x1 = int((i / TOP_LEDS) * width)
-x2 = int(((i + 1) / TOP_LEDS) * width)
-region = screen.crop((x1, 0, x2, EDGE_THICKNESS))
+| Library | Purpose |
+|---------|---------|
+| **mss** | Captures the screen efficiently in real-time |
+| **Pillow (PIL)** | Image manipulation and cropping |
+| **numpy** | Fast averaging of pixel colors |
+| **pyserial** | Sends RGB values to Arduino |
+
+Install them with:
+
+```bash
+pip install mss pillow numpy pyserial
