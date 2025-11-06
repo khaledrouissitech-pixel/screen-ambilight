@@ -132,4 +132,30 @@ region = screen.crop((x1, 0, x2, EDGE_THICKNESS)
 | width | Full screen width |
 | EDGE_THICKNESS| Number of pixels to capture from the top edge|
 | (x1, 0, x2, EDGE_THICKNESS)| Rectangular slice for that LED |
+LED 0 = first slice
+ LED 1 = next slice
+ Continues across entire edge
 
+Same logic repeats for:
+
+Bottom
+
+Left
+
+Right
+
+Finally, all LED colors are stored in a list and sent to Arduino.
+
+#🧩 Arduino Code
+
+arduino_led.ino:
+
+Listens to serial
+
+Each LED receives 3 bytes: R G B
+
+Writes colors to WS2812B strip using Adafruit NeoPixel
+
+#📜 License
+
+MIT — free to modify and improve.
