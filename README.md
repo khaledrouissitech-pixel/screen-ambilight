@@ -125,3 +125,11 @@ region = screen.crop((x1, 0, x2, EDGE_THICKNESS)
  ```
 
 ---
+*Explanation:*
+| Variable |Description |
+|----------|---------|
+| i  |LED index (0 → last LED)) |
+| width | Full screen width |
+| EDGE_THICKNESS| Number of pixels to capture from the top edge|
+| (x1, 0, x2, EDGE_THICKNESS)| Rectangular slice for that LED |
+
