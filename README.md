@@ -146,7 +146,7 @@ Same logic repeats for:
 
 Finally, all LED colors are stored in a list and sent to Arduino.
 
-#🧩 Arduino Code
+##🧩 Arduino Code
 
 arduino_led.ino:
 
