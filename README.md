@@ -64,3 +64,12 @@ Pillow → Used to capture and crop screen images
 
 pyserial → Sends RGB data to Arduino
 
+## ▶️ Running the Python Script
+*1. Simulation Mode (No Arduino Needed)*
+Inside led.py, set:
+```python
+SEND_SERIAL = False
+ ```
+
+---
+
