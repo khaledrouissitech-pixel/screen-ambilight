@@ -139,11 +139,10 @@ region = screen.crop((x1, 0, x2, EDGE_THICKNESS)
 
 Same logic repeats for:
 
--Bottom
 
--Left
-
--Right
+- Bottom  
+- Left
+- Right 
 
 Finally, all LED colors are stored in a list and sent to Arduino.
 
