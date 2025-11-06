@@ -56,4 +56,11 @@ The layout depends on strip LED density (30/meter, 60/meter, etc.)
 Install them with:
 
 ```bash
-pip install mss pillow numpy pyserial
+pip install mss pillow numpy pyserial 
+ ```
+
+---
+Pillow → Used to capture and crop screen images
+
+pyserial → Sends RGB data to Arduino
+
