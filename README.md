@@ -108,3 +108,20 @@ SEND_SERIAL = True
 
 ---
 4️⃣ Connect WS2812B data line to pin defined in code (default D6)
+
+##🧮 How LED Position Calculation Works
+
+Goal:
+Each LED must match the average color of a small zone of the screen edge.
+
+So the screen is cut into slices.
+
+✅ Example for top LEDs:
+ 
+```python
+x1 = int((i / TOP_LEDS) * width)
+x2 = int(((i + 1) / TOP_LEDS) * width)
+region = screen.crop((x1, 0, x2, EDGE_THICKNESS)
+ ```
+
+---
