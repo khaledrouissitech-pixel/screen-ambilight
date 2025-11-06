@@ -73,3 +73,16 @@ SEND_SERIAL = False
 
 ---
 
+Run:
+```python
+python led.py
+ ```
+
+---
+Output example:
+```css
+[(62, 59, 52), (44, 56, 63), (80, 62, 56), ...]
+
+ ```
+
+---
