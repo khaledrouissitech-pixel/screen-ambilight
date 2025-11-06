@@ -109,8 +109,7 @@ SEND_SERIAL = True
 ---
 4️⃣ Connect WS2812B data line to pin defined in code (default D6)
 
-##🧮 How LED Position Calculation Works
-
+# 🧮 How LED Position Calculation Works
 Goal:
 Each LED must match the average color of a small zone of the screen edge.
 
