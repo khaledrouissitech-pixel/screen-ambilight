@@ -15,7 +15,7 @@ SEND_SERIAL = False       # set False to test without Arduino
 
 TOTAL_LEDS = (TOP_LEDS * 2) + (SIDE_LEDS * 2)
 
-# Pre-calculate screen regions
+
 mon = mss.mss().monitors[1]
 screen_w = mon["width"]
 screen_h = mon["height"]
@@ -85,7 +85,7 @@ def capture_led_colors():
 
 
 def send_serial(colors):
-    data = bytearray([255])  # start byte
+    data = bytearray([255])  
     for r, g, b in colors:
         data.extend([r, g, b])
     ser.write(data)
