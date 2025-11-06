@@ -90,5 +90,21 @@ Each tuple (R, G, B) represents one LED’s color.
 
 ✅ Perfect for testing before buying LEDs.
 
+*🔌 2. Running With Arduino + LEDs*
 
+1️⃣ Upload arduino_led.ino to Arduino
+2️⃣ In led.py, set the COM port:
+ Run:
+```python
+COM_PORT = "COM5"
+ ```
 
+---
+3️⃣ Enable serial data:
+
+```python
+SEND_SERIAL = True
+ ```
+
+---
+4️⃣ Connect WS2812B data line to pin defined in code (default D6)
